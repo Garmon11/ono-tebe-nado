@@ -5,6 +5,10 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
     padding: 0;
 }
 
+/* .lence {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+} */
+
 .header {
     width: 95,64%;
 }
@@ -71,6 +75,9 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
 .image-section {
     position: relative;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/cover.jpg);
+    /* не понял как переопределить линзу, если указывать background-image она 
+    перекрывает линзу и все, пытался указать линзу как доп класс, но она просто перекрывает картинку если 
+    поместить ее в самый низ кода */
     background-size: cover;
     height: 757px;
     width: 1100px;
@@ -80,9 +87,20 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
 .image-section-span {
     display: block;
     width: 100%;
-    height: 115px;
+    min-height: 115px;
     text-transform: uppercase;
-    letter-spacing: 33px;
+}
+
+.image-section-text-space-left {
+    padding-left: 30px;
+}
+
+.space-left {
+    padding-left: 60px;
+}
+
+.image-letter-space {
+    padding-right: 60px;
 }
 
 .image-section-title-container {
@@ -138,7 +156,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
     background: transparent;
     background-color: transparent;
     color: #fff;
-    border: 1px solid white;
+    border: 1px solid currentColor;
     font-family: 'Raleway', sans-serif;
     line-height: 22.83px;
     font-size: 22px;
@@ -188,17 +206,17 @@ p {
     font-weight: 400;
 }
 
-.first-lot {
+.left-lot {
     position: relative;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-01.jpg);
     width: 334px;
-    height: 563px;
+    min-height: 563px;
     background-size: 170%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.first-lot-title-text {
+.left-lot-title-text {
     display: block;
     margin-top: 238px;
     color: #fff;
@@ -206,32 +224,32 @@ p {
     margin-right: 40px;
 }
 
-.secont-lot {
+.center-lot {
     position: relative;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-02.jpg);
     width: 334px;
-    height: 563px;
+    min-height: 563px;
     background-size: 160%;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.second-lot-title-text {
+.center-lot-title-text {
     color: #fff;
     margin-left: 40px;
     margin-right: 40px;
 }
 
-.third-lot {
+.right-lot {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-03.jpg);
     width: 334px;
-    height: 563px;
+    min-height: 563px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
-.third-lot-title-text {
+.right-lot-title-text {
     color: #fff;
     margin-left: 40px;
     margin-right: 40px;
@@ -323,20 +341,16 @@ p {
     gap: 48px;
 }
 
-.yt {
+.yt, .vk,  .pin{
     width: 48px;
     height: 48px;
     background-image: url(../images/yt.svg);
 }
 
 .vk {
-    width: 48px;
-    height: 48px;
     background-image: url(../images/vk.svg);
 }
 
 .pin {
-    width: 48px;
-    height: 48px;
     background-image: url(../images/pinterest.svg);
 }
