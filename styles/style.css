@@ -1,14 +1,5 @@
 /* место для вашего кода */
 
-body, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
-    margin: 0;
-    padding: 0;
-}
-
-/* .lence {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
-} */
-
 .header {
     width: 95,64%;
 }
@@ -29,7 +20,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
 .nav-list {
     display: flex;
     flex-wrap: wrap;
-    margin: 44px  48px 40px 26px;
+    margin: 44px 47.39px 40px 26.52px;
 }
 
 .list-item {
@@ -74,37 +65,50 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
 
 .image-section {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/cover.jpg);
-    /* не понял как переопределить линзу, если указывать background-image она 
-    перекрывает линзу и все, пытался указать линзу как доп класс, но она просто перекрывает картинку если 
-    поместить ее в самый низ кода */
+    background-image: url(../images/cover.jpg);
     background-size: cover;
-    height: 757px;
+    min-height: 757px;
     width: 1100px;
     margin: 0 0 179px 0;
 }
 
+.overlay {
+    width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #000;
+	opacity: 0.6;
+}
+
+/* если переиспользую это свойство для затемнения, то карточки осветляются вместо затемнения, 
+не понимаю в чем причина.
+Оставил осветленные карточки, чтобы было наглядно. */
+
+
+
 .image-section-span {
-    display: block;
+    display: inline-block;
     width: 100%;
     min-height: 115px;
     text-transform: uppercase;
 }
 
-.image-section-text-space-left {
-    padding-left: 30px;
+.span-30 {
+    letter-spacing: 30px;
 }
 
-.space-left {
-    padding-left: 60px;
-}
-
-.image-letter-space {
-    padding-right: 60px;
+.span-60 {
+    letter-spacing: 60px;
 }
 
 .image-section-title-container {
     padding: 165px 50px 0 50px;
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
@@ -115,11 +119,11 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
     color: #fff;
 }
 
-.image-section-span-center {
+.span-center {
     text-align: center;
 }
 
-.image-section-span-right {
+.span-right {
     text-align: right;
 }
 
@@ -127,11 +131,13 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 135px 0 0 0; 
+    padding: 165px 0 0 0; 
     align-items: baseline;
 }
 
 .section-text-item {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     width: 637px;
@@ -145,7 +151,9 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
 }
 
 .section-button-item {
-    margin: 0 0 52px 0;
+    position: relative;
+    z-index: 1;
+    margin: 0 30px 51px 0;
 }
 
 .section-image-button {
@@ -206,53 +214,43 @@ p {
     font-weight: 400;
 }
 
-.left-lot {
-    position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-01.jpg);
+.section-lots-card {
     width: 334px;
     min-height: 563px;
-    background-size: 170%;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.left-lot {
+    position: relative;
+    background-image: url(../images/card-lot-01.jpg);
+    background-size: 170%;
+}
+
+.lot-text { 
+    color: #fff;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .left-lot-title-text {
     display: block;
     margin-top: 238px;
-    color: #fff;
-    margin-left: 40px;
-    margin-right: 40px;
 }
 
 .center-lot {
     position: relative;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-02.jpg);
-    width: 334px;
-    min-height: 563px;
-    background-size: 160%;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.center-lot-title-text {
-    color: #fff;
-    margin-left: 40px;
-    margin-right: 40px;
+    background-image: url(../images/card-lot-02.jpg);
+    background-size: 160%;/
 }
 
 .right-lot {
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/card-lot-03.jpg);
-    width: 334px;
-    min-height: 563px;
+    position: relative;
+    background-image: url(../images/card-lot-03.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 .right-lot-title-text {
-    color: #fff;
-    margin-left: 40px;
-    margin-right: 40px;
     margin-top: 90px;
 }
 
@@ -312,7 +310,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* gap: 185px; */
+    padding: 15px;
 }
 
 .footer-list-item {
@@ -333,6 +331,7 @@ p {
 .footer-list-link {
     text-decoration: none;
     color: #000;
+    padding-left: 15px;
 }
 
 .socials {
@@ -341,9 +340,12 @@ p {
     gap: 48px;
 }
 
-.yt, .vk,  .pin{
+.footer-image {
     width: 48px;
     height: 48px;
+}
+
+.yt {
     background-image: url(../images/yt.svg);
 }
 
