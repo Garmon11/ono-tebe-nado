@@ -70,6 +70,7 @@
     min-height: 757px;
     width: 1100px;
     margin: 0 0 179px 0;
+    z-index: 0;
 }
 
 .overlay {
@@ -82,13 +83,8 @@
 	bottom: 0;
 	background: #000;
 	opacity: 0.6;
+    z-index: -1;
 }
-
-/* если переиспользую это свойство для затемнения, то карточки осветляются вместо затемнения, 
-не понимаю в чем причина.
-Оставил осветленные карточки, чтобы было наглядно. */
-
-
 
 .image-section-span {
     display: inline-block;
@@ -97,11 +93,11 @@
     text-transform: uppercase;
 }
 
-.span-30 {
+.low-letter-space {
     letter-spacing: 30px;
 }
 
-.span-60 {
+.heigh-letter-space {
     letter-spacing: 60px;
 }
 
@@ -215,43 +211,38 @@ p {
 }
 
 .section-lots-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     width: 334px;
     min-height: 563px;
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 160%;
+    background-size: cover;
+    z-index: 0;
 }
 
 .left-lot {
-    position: relative;
     background-image: url(../images/card-lot-01.jpg);
-    background-size: 170%;
 }
 
 .lot-text { 
     color: #fff;
-    margin-left: 40px;
-    margin-right: 40px;
+    margin: 0 40px 48px 40px;
 }
 
 .left-lot-title-text {
     display: block;
-    margin-top: 238px;
 }
 
 .center-lot {
-    position: relative;
     background-image: url(../images/card-lot-02.jpg);
-    background-size: 160%;/
 }
 
 .right-lot {
-    position: relative;
     background-image: url(../images/card-lot-03.jpg);
-    background-size: cover;
-}
-
-.right-lot-title-text {
-    margin-top: 90px;
 }
 
 .lots-link {
